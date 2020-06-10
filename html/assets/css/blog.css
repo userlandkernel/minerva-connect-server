@@ -1,0 +1,140 @@
+header, header * {
+    color: #FFFFFF;
+}
+main {
+    padding-top: 25px;
+    padding-bottom: 100px;
+}
+
+#blog-viewcontroller #blog-imageview{
+    display: none;
+}
+
+#blog-viewcontroller input {
+    visibility: hidden;
+    width: 0;
+    margin-left: -2px;
+}
+
+#blog-viewcontroller input::before {
+    visibility: visible;
+    content: '    ';
+    position: fixed;
+    z-index: 1000;
+    text-align: center;
+    margin-top: -11px;
+    padding-left: 10px !important;
+    padding: 17px 10px 20px 10px;
+    background: transparent;
+    min-width: 200px;
+    cursor: pointer;
+}
+
+#blog-viewcontroller input:checked {
+    padding: 0;
+    margin: 0;
+
+}
+
+ #blog-viewcontroller input:checked ~ section {
+    width: 50%;
+ }
+
+
+
+#blog-viewcontroller input:checked ~ #blog-imageview {
+    display: block;
+    position: absolute;
+}
+
+#blog-viewcontroller input:checked ~ #blog-listview {
+    display: none;
+}
+
+.toggle, .toggle:focus-within {
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px !important;
+    background: rgb(221, 202, 126);
+    color: #111111;
+    padding: 5px;
+    outline: none;
+}
+
+.bubble {
+    width: 100%;
+}
+
+.bubble, .bubble * {
+    background: #efefef;
+    color: rgb(113, 119, 144);
+}
+
+.bubble a {
+    width: 100%;
+    background: #111111;
+    color: rgb(221, 202, 126);
+    float:  right;
+    padding: 7px;
+    margin: -7px;
+    margin-top: 7px;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.bubble {
+    padding: 7px;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 2px;
+    width: 100%;
+    box-shadow: 3px 3px 3px #111;
+    word-wrap: break-word;
+    word-break: default;
+}
+
+.bubble strong sup {
+    background: #111111;
+    padding: 9px;
+    margin-left: -7px;
+    border-top-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+footer {
+    position: fixed !important;
+    bottom: 0 !important;
+    width: 100%;
+    padding-bottom: -50px;
+}
+footer * {
+    background: #333333 !important;
+    color: #fff;
+    display: inline-block;
+}
+
+footer section {
+    width: 100%;
+}
+footer section ul li {
+    padding: 5px;
+}
+main .row .col-4 {
+    margin-left: -2.5px;
+    min-height: 250px !important;
+    min-width: 250px !important;
+}
+main .row .col-4 * {
+    text-overflow: ellipsis !important;
+    overflow-y: auto;
+    overflow-x: hidden;
+    white-space: pre-line;
+    height: 250px !important;
+    min-width: 250px !important 100%;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.8);
+}

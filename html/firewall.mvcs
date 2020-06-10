@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="widt=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+	<meta name="apple-mobile-web-app-capable" content="true"/>
+	<title>$$TITLE$$</title>
+	<link rel="stylesheet" href="assets/css/nightowl.css"/>
+</head>
+<body>
+	<header id="luxbar" class="luxbar-fixed">
+		<input type="checkbox" class="luxbar-checkbox" id="luxbar-checkbox"/>
+		<div class="luxbar-menu luxbar-menu-right luxbar-menu-material-bluegrey">
+			<ul class="luxbar-navigation">
+				<li class="luxbar-header">
+					<a href="#" class="luxbar-brand">
+						<img src="assets/img/logo.png" alt="logo"/>
+					</a>
+					<label class="luxbar-hamburger luxbar-hamburger-doublespin" id="luxbar-hamburger" for="luxbar-checkbox"> <span></span> </label>
+				</li>
+			</ul>
+		</div>		
+	</header>
+	<main class="container">
+		<section class="row">
+			<article>
+				<h1>Firewall</h1>
+			</article>
+		</section>
+	</main>
+	<footer>
+		<section>
+			<ul>
+				<li>&nbsp;Minerva  $$YEAR$$</li>
+			</ul>
+		</section>
+	</footer>
+</body>
+</html>
