@@ -8,7 +8,7 @@ char *mvcs_var_pgp_authcode(void) {
     const int len = 40;
     char* s = malloc(41);
     bzero(s, 40);
-    srand((unsigned int)time(NULL));
+    srand((unsigned int)time(NULL)); // I'm aware this is a vulnerable random approach where the random isn't random enough
     srand(rand());
 
     static const char alphanum[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
