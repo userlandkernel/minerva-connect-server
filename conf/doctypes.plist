@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plist version="1.0">
+<dict>
+	<key>DOCTYPE</key>
+	<dict>
+		<key>text/plain</key>
+		<array>
+			<string>log</string>
+			<string>txt</string>
+			<string>ini</string>
+		</array>
+
+		<key>text/css</key>
+		<array>
+			<string>style</string>
+			<string>css</string>
+			<string>scss</string>
+		</array>
+
+		<key>text/html</key>
+		<array>
+			<string>html</string>
+			<string>mvcs</string>
+			<string>htm</string>
+			<string>shtml</string>
+			<string>xhtml</string>
+		</array>
+
+		<key>text/csv</key>
+		<array>
+			<string>csv</string>
+		</array>
+
+		<key>font/woff</key>
+		<array>
+			<string>woff</string>
+		</array>
+
+		<key>font/ttf</key>
+		<array>
+			<string>ttf</string>
+		</array>
+
+		<key>font/otf</key>
+		<array>
+			<string>otf</string>
+		</array>
+
+		<key>image/jpeg</key>
+		<array>
+			<string>jpg</string>
+			<string>jfif</string>
+			<string>jpeg</string>
+		</array>
+
+		<key>image/svg+xml</key>
+		<array>
+			<string>svg</string>
+		</array>
+
+		<key>image/png</key>
+		<array>
+			<string>png</string>
+		</array>
+
+		<key>application/javascript</key>
+		<array>
+			<string>js</string>
+		</array>
+
+		<key>application/json</key>
+		<array>
+			<string>json</string>
+		</array>
+
+		<key>application/pdf</key>
+		<array>
+			<string>pdf</string>
+		</array>
+
+		<key>application/zip</key>
+		<array>
+			<string>zip</string>
+		</array>
+
+		<key>video/mp4</key>
+		<array>
+			<string>mp4</string>
+		</array>
+	</dict>
+</dict>

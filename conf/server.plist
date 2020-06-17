@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plist version="1.0">
+<dict>
+	<key>HOSTING</key>
+	<dict>
+		<key>SRVHOST</key>
+		<string>0.0.0.0</string>
+		<key>SRVPORT</key>
+		<integer>80</integer>
+		<key>HTTP_HEADERSIZE</key>
+		<string>8KB</string>
+	</dict>
+	<key>LOGGING</key>
+	<dict>
+		<key>LOGLEVEL</key>
+		<integer>0</integer>
+		<key>COLOR</key>
+		<true/>
+		<key>LOGTOFILE</key>
+		<false/>
+	</dict>
+</dict>

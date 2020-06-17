@@ -19,9 +19,7 @@ typedef struct MVCSClient {
 	int fd;
 	struct sockaddr_in addr;
 	socklen_t len;
-	struct MVCSClient* prev;
 } MVCSClient;
-typedef MVCSClient* MVCSClientRegistry;
 
 typedef enum mvc_err {
 	MVC_ERR_OK = 0,

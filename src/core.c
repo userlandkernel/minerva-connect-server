@@ -2,50 +2,27 @@
  * Minerva Server - Core
 **/
 
+#include <plist/plist.h>
 #include "core.h"
 #include "config.h"
 #include "variables.h"
 
-MVCSClientRegistry clientRegistry = NULL;
+
+char* MVCSIPv4String(struct sockaddr_in addr) {
+	char* str = malloc(INET_ADDRSTRLEN);
+	bzero(str, INET_ADDRSTRLEN);
+	inet_ntop(AF_INET, &addr.sin_addr, str, INET_ADDRSTRLEN); 
+	return str;
+}
 
 
-void* MVCSClientAlloc(void) {
-	void* client =  malloc(sizeof(MVCSClient));
+MVCSClient* MVCSClientCreate(int fd, struct sockaddr_in addr, socklen_t len) {
+	MVCSClient* client = malloc(sizeof(MVCSClient));
 	bzero(client, sizeof(MVCSClient));
+	client->fd = fd;
+	memcpy(&client->addr, &addr, sizeof(struct sockaddr_in));
+	client->len = len;
 	return client;
-}
-
-void MVCSClientFree(MVCSClient* client) {
-	if(client) {
-		free(client);
-		client = NULL;
-	}
-}
-
-void MVCSListClients(void) {
-
-	MVCSClientRegistry node = clientRegistry;
-	
-	while(node) {
-		printf("Client connnection (fd = %d)\n", node->fd);
-		node = node->prev;
-	}
-
-}
-
-MVCSClient* MVCSAddClient(int fd, struct sockaddr_in addr, socklen_t len) {
-	MVCSClient* node = MVCSClientAlloc();
-	memcpy((void*)&node->addr, (void*)&addr, sizeof(struct sockaddr_in));
-	node->fd = fd;
-	node->len = len;
-	if(!clientRegistry) {
-		clientRegistry = node;
-	}
-	else {
-		node->prev = clientRegistry;
-		clientRegistry = node;
-	}
-	return node;
 }
 
 char* MVCSStatusString(unsigned int statusCode) {
@@ -179,7 +156,7 @@ void MVCSHTTPRouter(MVCSClient* client, char *HTTP_PROTOCOL, char *HTTP_METHOD, 
 	size_t contentLength = ftell(fp);
 	fseek(fp, 0, SEEK_SET);
 	
-	printf("Serving file %s (%d bytes)...\n", DOCUMENT_PATH, contentLength);
+	printf("Serving file %s (%zu bytes)...\n", DOCUMENT_PATH, contentLength);
 
 	char content[contentLength+1];
 	bzero(content, contentLength+1);
@@ -365,7 +342,9 @@ int mvcs_start(const char *ip, const char* port, const bool verbose) {
 		clientFd = accept(mvcs_fd, (struct sockaddr*)&clientAddr, &clientLen);
 		if(clientFd >= 0) {
 
-			MVCSClient* client = MVCSAddClient(clientFd, clientAddr, clientLen);
+			MVCSClient* client = MVCSClientCreate(clientFd, clientAddr, clientLen);
+
+			printf("Client connected: %s\n", MVCSIPv4String(client->addr));
 
 			pthread_t clientThread;
 			pthread_attr_t attr;
