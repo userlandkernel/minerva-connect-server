@@ -8,6 +8,7 @@
 #include <fcntl.h>
 #include <plist/plist.h>
 #include "config.h"
+#include "rsasec.h"
 
 MVCSConfig MVCS_CONFIG = {};
 

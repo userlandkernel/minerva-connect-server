@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plist version="1.0">
+<dict>
+	<key>ALLOW</key>
+	<array>
+		<dict>
+			<key>FIRST_NAME</key>
+			<string>Sem</string>
+			<key>LAST_NAME</key>
+			<string>Voigtlander</string>
+			<key>EMAIL</key>
+			<string>info@kernelprogrammer.com</string>
+			<key>PUBKEY</key>
+			<string>ABCDE012345.asc</string>
+			<key>ROLE</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+</dict>
